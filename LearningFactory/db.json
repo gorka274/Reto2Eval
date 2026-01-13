@@ -1,0 +1,44 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "Nombre": "Juan",
+      "Apellido": "García",
+      "Correo electronico": "juan.garcia@email.com",
+      "telefono": "+34 612 345 678"
+    },
+    {
+      "id": 2,
+      "Nombre":  "María",
+      "Apellido": "López",
+      "Correo electronico": "maria.lopez@email.com",
+      "telefono": "+34 623 456 789"
+    },
+    {
+      "id": 3,
+      "Nombre": "Carlos",
+      "Apellido": "Martínez",
+      "Correo electronico": "carlos.martinez@email.com",
+      "telefono": "+34 634 567 890"
+    },
+    {
+      "id": 4,
+      "Nombre": "Ana",
+      "Apellido": "Rodríguez",
+      "Correo electronico": "ana. rodriguez@email.com",
+      "telefono": "+34 645 678 901"
+    },
+    {
+      "id":  5,
+      "Nombre": "Pedro",
+      "Apellido": "Fernández",
+      "Correo electronico": "pedro.fernandez@email.com",
+      "telefono": "+34 656 789 012"
+    }
+  ],
+
+  "MK677": [ {
+    "stock": 30,
+    "price": 2499.99
+  }]
+}
