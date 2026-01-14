@@ -1,22 +1,32 @@
+$colorVerde: #637402;
+$colorFooter: #E4D7AA;
+$centro: center;
+$derecha: right;
+$normal: normal;
+
+
 * {
   font-family: Cambria;
-  font-weight: normal;
+  font-weight: $normal;
+}
+
+footer {
+  margin: -8px;
 }
 
 div {
-  height: 260px;
+  height: 300px;
 }
 
 h1, h2 {
-  color: #637402;
+  color: $colorVerde;
   margin-left: 120px;
 }
 
 h3 {
-  text-align: center;
+  text-align: $centro;
   margin-top: 100px;
 }
-
 
 hr {
   margin-left: 100px;
@@ -26,12 +36,13 @@ hr {
 img {
   width: 50px;
   height: 50px;
-  float: right;
+  float: $derecha;
   margin-right: 20px;
-
-
+  margin-top: -40px;
+  border-radius: 5px;
 }
 
+
 footer {
-  background-color: #E4D7AA;
+  background-color: $colorFooter;
 }
