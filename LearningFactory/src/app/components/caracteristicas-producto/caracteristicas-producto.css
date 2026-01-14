@@ -1,0 +1,83 @@
+.producto {
+  background: #f3f1e7;
+  padding: 4rem 6rem;
+}
+.producto__hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.producto__imagen img {
+  width: 100%;
+  border-radius: 12px;
+}
+.producto__titulo {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.producto__tagline {
+  color: #6b7d1e;
+  margin-bottom: 1.5rem;
+}
+.producto__precio {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1.5rem 0;
+}
+.producto__descripcion {
+  margin-top: 2rem;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+.btn-primary {
+  background: #6b7d1e;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.caracteristicas {
+  padding: 4rem 6rem;
+}
+.caracteristicas .caracteristica {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.caracteristicas .caracteristica__index {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #6b7d1e;
+  min-width: 60px;
+}
+
+.especificaciones {
+  padding: 4rem 6rem;
+  background: #f3f1e7;
+}
+.especificaciones .tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+.especificaciones .tabla th {
+  text-align: left;
+  padding: 1rem;
+  color: #6b7d1e;
+  width: 30%;
+}
+.especificaciones .tabla td {
+  padding: 1rem;
+  color: #2b2b2b;
+}
+.especificaciones .tabla tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}/*# sourceMappingURL=caracteristicas-producto.css.map */
