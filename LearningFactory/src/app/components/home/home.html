@@ -1,5 +1,25 @@
 <div class="carousel-container">
 
+<div class="carousel">
+
+  <button class="nav left" (click)="prev()">‹</button>
+
+  <div class="slide">
+    <div class="content">
+      <h1>{{ slides[currentIndex].title }}</h1>
+      <p>{{ slides[currentIndex].text }}</p>
+    </div>
+
+    <div class="image">
+      <img [src]="slides[currentIndex].image" alt="slide image">
+    </div>
+  </div>
+
+  <button class="nav right" (click)="next()">›</button>
+
+</div>
+
+
 </div>
 
 <div class="content-container">

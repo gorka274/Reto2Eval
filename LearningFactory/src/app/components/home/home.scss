@@ -1,0 +1,64 @@
+
+.carousel {
+  position: relative;
+  background: #6b7f00;
+  color: white;
+  padding: 60px;
+  overflow: hidden;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content {
+  max-width: 40%;
+}
+
+.content h1 {
+  font-size: 48px;
+  font-family: 'Creepster', system-ui;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 24px;
+    font-family: 'Creepster', system-ui;
+
+}
+
+.image img {
+  width: 600px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+/* Botones */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.nav:hover {
+  color: #ccc;
+  background-color:  #485400;
+}
+
+.nav.left {
+  left: 20px;
+}
+
+.nav.right {
+  right: 20px;
+}
+.nav:focus {
+  outline: none;
+}
