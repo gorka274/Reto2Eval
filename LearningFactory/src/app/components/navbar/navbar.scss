@@ -5,11 +5,6 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: sans-serif;
-    background-color: #f0f0f0;
-}
-
 .navbar {
     display: flex;
     justify-content: space-between; /* Alinea elementos a los extremos opuestos */
@@ -17,6 +12,8 @@ body {
     background-color: #ffffff;
     padding: 10px 50px;
     box-shadow: 0 2px 4px gray;
+    font-family: sans-serif;
+    margin: -8px;
 }
 
 nav a {
@@ -43,7 +40,5 @@ nav a {
 }
 
 .nav-links li a:hover {
-  background-color: rgb(196, 179, 179);
-  border-radius: 8px;
-
+  color: #76af0b;
 }
