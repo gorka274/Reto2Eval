@@ -6,7 +6,7 @@ import {CaracteristicasProducto} from "./components/caracteristicas-producto/car
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Footer, Navbar,CaracteristicasProducto],
+  imports: [RouterOutlet, Footer, Navbar, CaracteristicasProducto],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
