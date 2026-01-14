@@ -1,0 +1,100 @@
+$primary-color: #6b7d1e;
+$secondary-color: #f3f1e7;
+$text-color: #2b2b2b;
+$border-radius: 12px;
+
+.producto {
+  background: $secondary-color;
+  padding: 4rem 6rem;
+
+  &__hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  &__imagen img {
+    width: 100%;
+    border-radius: $border-radius;
+  }
+
+  &__titulo {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__tagline {
+    color: $primary-color;
+    margin-bottom: 1.5rem;
+  }
+
+  &__precio {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1.5rem 0;
+  }
+
+  &__descripcion {
+    margin-top: 2rem;
+    line-height: 1.6;
+    max-width: 520px;
+  }
+}
+
+.btn-primary {
+  background: $primary-color;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.caracteristicas {
+  padding: 4rem 6rem;
+
+  .caracteristica {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    &__index {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $primary-color;
+      min-width: 60px;
+    }
+  }
+}
+
+.especificaciones {
+  padding: 4rem 6rem;
+  background: $secondary-color;
+
+  .tabla {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+      text-align: left;
+      padding: 1rem;
+      color: $primary-color;
+      width: 30%;
+    }
+
+    td {
+      padding: 1rem;
+      color: $text-color;
+    }
+
+    tr {
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+  }
+}
