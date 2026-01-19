@@ -1,1 +1,54 @@
-<p>compra works!</p>
+
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h1>Comprar MK677</h1>
+            <p class="subtitle">Ingresa tus datos para poder registrarte en nuestra página web. </p>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="cp">CP</label>
+                    <input type="text" id="cp" placeholder="Ingresa tu código postal">
+                </div>
+                <div class="form-group">
+                    <label for="metodo">Método de pago</label>
+                    <input type="text" id="metodo" placeholder="Ingresa tu método de pago">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="provincia">Provincia</label>
+                    <input type="text" id="provincia" placeholder="Ingresa tu provincia">
+                </div>
+                <div class="form-group">
+                    <label for="cantidad">Cantidad</label>
+                    <input type="number" id="cantidad" placeholder="Ingresa la cantidad que quieras" value="1" min="1">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="calle">Calle</label>
+                    <input type="text" id="calle" placeholder="Ingresa tu dirección">
+                </div>
+            </div>
+
+            <div class="price-section">
+                <span class="price-label">Precio total:</span>
+                <span class="price-value" id="precioTotal">2499€</span>
+            </div>
+
+            <button class="btn-comprar" onclick="comprar()">Comprar</button>
+        </div>
+
+        <div class="info-section">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400">
+            </div>
+            <div class="text-box">
+                <p>Gracias por considerar comprar nuestro producto</p>
+            </div>
+        </div>
+    </div>
+</body>
