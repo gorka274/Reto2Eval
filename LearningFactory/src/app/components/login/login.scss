@@ -1,19 +1,44 @@
+$colorCrema: #F9F7EB;
+$centro: center;
+$grisOscuro: #525252;
+$colorVerde: #637402;
+$negrita: bold;
+$colorGris: #737373;
+$colorBlanco: white;
+$grisClaro: lightgray;
+
+
+
+* {
+  font-family: Roboto;
+  background-color: $colorCrema;
+}
+
+
 .login {
   width: 40%;
   margin: 50px;
 }
 
 .titulo, .subtitulo {
-  text-align: center;
+  text-align: $centro;
+}
+
+.subtitulo {
+  color: $grisOscuro;
 }
 
 .titulo {
-  color: #637402;
+  color: $colorVerde;
 }
 
 .registro {
-  color: #637402;
-  font-weight: bold;
+  color: $colorVerde;
+  font-weight: $negrita;
+}
+
+.info {
+  color: $colorGris;
 }
 
 form {
@@ -21,14 +46,38 @@ form {
 }
 
 .boton {
-  margin-left: 17%;
+  margin-left: 15.5%;
   margin-top: 50px;
   width: 50%;
+  padding: 20px;
+  background-color: $colorVerde;
+  color: $colorBlanco;
+  border:$colorVerde;
+  font-weight: $negrita;
+  cursor: pointer;
 }
 
 #email, #password {
   width: 80%;
+  padding: 20px;
+  border: 1px solid $grisClaro;
+  background-color: $colorBlanco;
+}
 
+label {
+  font-weight: $negrita;
+}
+
+
+.contenedor {
+  display: flex;
+  align-items: $centro;
+  justify-content: space-around;
+}
+
+.lateral {
+  width: 45%;
+  text-align: $centro;
 }
 
 
