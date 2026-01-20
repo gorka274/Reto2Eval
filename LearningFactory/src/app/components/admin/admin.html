@@ -21,7 +21,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @for (us of usuariosFiltered; track $index) {
+                    @for (us of usuariosFiltered(); track $index) {
                     <tr>
                         <td>{{us.id}}</td>
                         <td>{{us.nombre}}</td>
@@ -31,7 +31,7 @@
                         <th>{{us.rol}}</th>
                         <td>
                             <button class="btn-modificar">Modificar</button>
-                            <button class="btn-eliminar">Eliminar</button>
+                            <button class="btn-eliminar" (click)="eliminarUsuario(us.id)">Eliminar</button>
                         </td>
                     </tr>
                   }
@@ -44,7 +44,7 @@
             <div class="control-group">
                 <label class="control-label">Stock:</label>
                 <div class="control-row">
-                    <input type="number" class="control-value" id="stockValue" value="20">
+                    <input type="number" class="control-value" id="stockValue" [value]="datosMaquina()?.stock">
                     <button class="btn-control">+</button>
                     <button class="btn-control">-</button>
                 </div>
@@ -53,7 +53,7 @@
             <div class="control-group">
                 <label class="control-label">Precio:</label>
                 <div class="control-row">
-                    <input type="number" class="control-value" id="priceValue" value="2499.99" step="0.01">
+                    <input type="number" class="control-value" id="priceValue" [value]="datosMaquina()?.price" step="0.01">
                     <button class="btn-control">+</button>
                     <button class="btn-control">-</button>
                 </div>
