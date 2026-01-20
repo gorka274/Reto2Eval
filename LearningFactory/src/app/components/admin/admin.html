@@ -1,1 +1,58 @@
-<p>admin works!</p>
+
+<div class="main-content">
+        <h1>Página de administración</h1>
+
+        <!-- Tabla de usuarios -->
+        <div class="table-container">
+            <div class="table-header">
+
+            </div>
+
+            <table id="usersTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Correo electrónico</th>
+                        <th>Teléfono</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Ander</td>
+                        <td>Munoz</td>
+                        <td class="email-cell">Ander.Munoz@gmail.com</td>
+                        <td>923450982</td>
+                        <td>
+                            <button class="btn-modificar">Modificar</button>
+                            <button class="btn-eliminar">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Controles de Stock y Precio -->
+        <div class="stock-container">
+            <div class="control-group">
+                <label class="control-label">Stock:</label>
+                <div class="control-row">
+                    <input type="number" class="control-value" id="stockValue" value="20">
+                    <button class="btn-control">+</button>
+                    <button class="btn-control">-</button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">Precio:</label>
+                <div class="control-row">
+                    <input type="number" class="control-value" id="priceValue" value="2499.99" step="0.01">
+                    <button class="btn-control">+</button>
+                    <button class="btn-control">-</button>
+                </div>
+            </div>
+        </div>
+    </div>
