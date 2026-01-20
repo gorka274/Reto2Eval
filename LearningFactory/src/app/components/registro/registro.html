@@ -10,17 +10,17 @@
 
     <form action="/action_page.php">
       <label for="nombre">Nombre</label><br><br>
-      <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required><br><br>
+      <input type="text" id="nombre" name="nombre" [(ngModel)]="userX.nombre" placeholder="Ingresa tu nombre" required><br><br>
       <label for="apellido">Apellido</label><br><br>
-      <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required><br><br>
+      <input type="text" id="apellido" name="apellido" [(ngModel)]="userX.apellido" placeholder="Ingresa tu apellido" required><br><br>
       <label for="email">Dirección de correo electrónico</label><br><br>
-      <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required><br><br>
+      <input type="email" id="email" name="email" [(ngModel)]="userX.correoElectronico" placeholder="Ingresa tu correo electrónico" required><br><br>
       <label for="telefono">Teléfono</label><br><br>
-      <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu teléfono" required>
+      <input type="tel" id="telefono" name="telefono" [(ngModel)]="userX.telefono" placeholder="Ingresa tu teléfono" required>
       <br><br>
 
       <label for="password">Contraseña</label><br><br>
-      <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+      <input type="password" id="password" name="password" [(ngModel)]="userX.password" placeholder="Ingresa tu contraseña" required>
       <p class="info">La contraseña debe contener un mínimo de 8 carácteres con letras, números y caracteres especiales.</p>
 
       <a href="/login" routerLink="/login" class="registro">¿Ya tienes cuenta? Inicia sesión</a>

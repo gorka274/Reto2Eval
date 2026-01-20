@@ -84,8 +84,8 @@ export class Admin {
           next: () => {
             console.log(`Usuario con ID ${id} eliminado correctamente`);
             //Actualizar la lista al usuario eliminado
-            this.usuariosFiltered = this.usuariosFiltered.filter(user => user.id !== id);
-            this.users = this.users.filter(user => user.id !== id);
+            this.usuariosFiltered.set(this.usuariosFiltered().filter(user => user.id !== id));
+            this.users.set(this.users().filter(user => user.id !== id));
           },
           error: (err) => {
             console.error('Error al eliminar usuario:', err);

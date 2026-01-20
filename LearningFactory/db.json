@@ -6,8 +6,7 @@
       "apellido": "García",
       "correoElectronico": "juan.garcia@email.com",
       "telefono": "+34 612 345 678",
-      "rol": "admin",
-      "password": "Juan1234"
+      "rol": "admin"
     },
     {
       "id": 2,
@@ -15,8 +14,7 @@
       "apellido": "López",
       "correoElectronico": "maria.lopez@email.com",
       "telefono": "+34 623 456 789",
-      "rol": "user",
-      "password": "Maria1234"
+      "rol": "user"
     },
     {
       "id": 3,
@@ -24,8 +22,7 @@
       "apellido": "Martínez",
       "correoElectronico": "carlos.martinez@email.com",
       "telefono": "+34 634 567 890",
-      "rol": "user",
-      "password": "Carlos1234"
+      "rol": "user"
     },
     {
       "id": 4,
@@ -33,8 +30,7 @@
       "apellido": "Rodríguez",
       "correoElectronico": "ana.rodriguez@email.com",
       "telefono": "+34 645 678 901",
-      "rol": "user",
-      "password": "Ana1234"
+      "rol": "user"
     },
     {
       "id": 5,
@@ -42,11 +38,27 @@
       "apellido": "Fernández",
       "correoElectronico": "pedro.fernandez@email.com",
       "telefono": "+34 656 789 012",
-      "rol": "user",
-      "password": "Pedro1234"
+      "rol": "user"
+    },
+    {
+      "id": 6,
+      "nombre": "",
+      "apellido": "",
+      "correoElectronico": "",
+      "telefono": "",
+      "password": "",
+      "rol": "user"
+    },
+    {
+      "id": 7,
+      "nombre": "Ander",
+      "apellido": "Munoz",
+      "correoElectronico": "ander123@gmail.com",
+      "telefono": "900000000",
+      "password": "password",
+      "rol": "user"
     }
   ],
-
   "MK677": [
     {
       "stock": 30,

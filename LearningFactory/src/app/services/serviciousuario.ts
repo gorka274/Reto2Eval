@@ -27,20 +27,15 @@ export class Serviciousuario {
         return this.http.delete(`${this.url}/${id}`, httpOptions);
       }
 
-      usuario: Usuario = {id: 0, nombre: '', apellido: '', correoElectronico: '', telefono: '', rol: Rol.USER };
-      constructor(private http: HttpClient) {}
-
-
-
-  usuario: Usuario = {
-    id: 0,
-    nombre: '',
-    apellido: '',
-    correoElectronico: '',
-    telefono: '',
-    password: '',
-    rol: Rol.USER,
-  };
+     usuario: Usuario = {
+      id: 0,
+      nombre: '',
+      apellido: '',
+      correoElectronico: '',
+      telefono: '',
+      password: '',
+      rol: Rol.USER,
+    };
   constructor(private http: HttpClient) {}
 
   alta(usuario: Usuario): Observable<Usuario> {
