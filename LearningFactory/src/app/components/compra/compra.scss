@@ -1,10 +1,20 @@
+//variables
+$blanco: #f9f7eb;
+$gris: #e8e8ee;
+$verde: #6b6b00;
+$negro: #333;
+$textoInput: #666;
+$botonComprar:#6b7a00;
+$botonComprarHover:#5a6600;
+$fondoTextoAgradecer: #e8dfc4;
+
 * {
   margin: 0;
   padding: 0;
 }
 
 form {
-  background-color: #f9f7eb;
+  background-color: $blanco;
   padding: 20px;
 }
 
@@ -14,7 +24,7 @@ form {
 }
 
 .formulario {
-  background-color: #e8e8ee;
+  background-color: $gris;
   padding: 40px;
   border-radius: 8px;
   margin-bottom: 30px;
@@ -22,14 +32,14 @@ form {
 
 h1 {
   text-align: center;
-  color: #6b6b00;
+  color: $verde;
   font-size: 28px;
   margin-bottom: 10px;
 }
 
 .subtitle {
   text-align: center;
-  color: #333;
+  color: $negro;
   font-size: 14px;
   margin-bottom: 40px;
 }
@@ -47,7 +57,7 @@ h1 {
 }
 
 label {
-  color: #333;
+  color: $negro;
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 8px;
@@ -58,8 +68,7 @@ input {
   border: none;
   border-radius: 4px;
   font-size: 14px;
-  background-color: white;
-  color: #666;
+  color: $textoInput;
 }
 
 .precioSeccion {
@@ -68,14 +77,14 @@ input {
 }
 
 .precioLabel {
-  color: #333;
+  color: $negro;
   font-weight: bold;
   font-size: 20px;
   margin-right: 20px;
 }
 
 .precioTotal {
-  color: #333;
+  color: $negro;
   font-size: 24px;
   font-weight: bold;
 }
@@ -85,8 +94,8 @@ input {
   width: 250px;
   justify-self: center;
   padding: 15px;
-  background-color: #6b7a00;
-  color: white;
+  background-color: $botonComprar;
+  color: $blanco;
   border: none;
   border-radius: 4px;
   font-size: 16px;
@@ -95,7 +104,7 @@ input {
 }
 
 .comprar:hover {
-  background-color: #5a6600;
+  background-color: $botonComprarHover;
 }
 
 .informacion {
@@ -116,7 +125,7 @@ input {
 }
 
 .textoAgradecer {
-  background-color: #e8dfc4;
+  background-color: $fondoTextoAgradecer;
   padding: 30px;
   border-radius: 8px;
   display: flex;
@@ -124,7 +133,7 @@ input {
 }
 
 .textoAgradecer p {
-  color: #6b6b00;
+  color: $verde;
   font-size: 14px;
   text-align: center;
 }
