@@ -21,18 +21,20 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @for (us of usuariosFiltered; track $index) {
                     <tr>
-                        <td>1</td>
-                        <td>Ander</td>
-                        <td>Munoz</td>
-                        <td class="email-cell">Ander.Munoz@gmail.com</td>
-                        <td>923450982</td>
-                        <th>User</th>
+                        <td>{{us.id}}</td>
+                        <td>{{us.nombre}}</td>
+                        <td>{{us.apellido}}</td>
+                        <td class="email-cell">{{us.correoElectronico}}</td>
+                        <td>{{us.telefono}}</td>
+                        <th>{{us.rol}}</th>
                         <td>
                             <button class="btn-modificar">Modificar</button>
                             <button class="btn-eliminar">Eliminar</button>
                         </td>
                     </tr>
+                  }
                 </tbody>
             </table>
         </div>
