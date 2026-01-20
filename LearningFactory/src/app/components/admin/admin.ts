@@ -37,5 +37,22 @@ export class Admin {
   });
 }
 
-
+    //Eliminar usuario
+    eliminarUsuario(id: number) {
+      //Validacion
+      if (confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
+        this.usersService.deleteUsuario(id).subscribe({
+          next: () => {
+            console.log(`Usuario con ID ${id} eliminado correctamente`);
+            //Actualizar la lista al usuario eliminado
+            this.usuariosFiltered = this.usuariosFiltered.filter(user => user.id !== id);
+            this.users = this.users.filter(user => user.id !== id);
+          },
+          error: (err) => {
+            console.error('Error al eliminar usuario:', err);
+            alert('Hubo un error al eliminar el usuario');
+          }
+        });
+      }
+    }
 }

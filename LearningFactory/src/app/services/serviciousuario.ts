@@ -22,6 +22,11 @@ export class Serviciousuario {
       return this.http.get(this.url);
       }
 
+      //Eliminar usuario
+      deleteUsuario(id: number): Observable<any> {
+        return this.http.delete(`${this.url}/${id}`, httpOptions);
+      }
+
       usuario: Usuario = {id: 0, nombre: '', apellido: '', correoElectronico: '', telefono: '', rol: Rol.USER };
       constructor(private http: HttpClient) {}
 
