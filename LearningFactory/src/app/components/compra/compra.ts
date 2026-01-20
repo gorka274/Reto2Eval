@@ -10,14 +10,14 @@ import { CommonModule } from '@angular/common';
   styleUrl: './compra.scss',
 })
 export class Compra {
-  private servicio = inject(Serviciomaquina);
+  private maquinaService = inject(Serviciomaquina);
 
   // Usamos un Signal para manejar el estado de forma reactiva
-  datosMaquina!: Maquina;
+  datosMaquina = signal<Maquina | null>(null);
 
   constructor() {
-    this.servicio.getMaquina().subscribe(data => {
-      this.datosMaquina = data.maquina; // Actualizamos el valor del signal
+    this.maquinaService.getMaquina().subscribe(data => {
+      this.datosMaquina.set(data[0]); // Actualizamos el valor del signal
       console.log('Datos de la máquina:', data);
     });
   }

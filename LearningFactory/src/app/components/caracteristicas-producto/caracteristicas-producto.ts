@@ -13,11 +13,11 @@ export class CaracteristicasProducto {
   private servicio = inject(Serviciomaquina);
 
   // Usamos un Signal para manejar el estado de forma reactiva
-  datosMaquina!: Maquina;
+  datosMaquina = signal<Maquina | null>(null);
 
   constructor() {
     this.servicio.getMaquina().subscribe(data => {
-      this.datosMaquina = data.maquina; // Actualizamos el valor del signal
+      this.datosMaquina.set(data[0]); // Actualizamos el valor del signal
       console.log('Datos de la máquina:', data);
     });
   }
