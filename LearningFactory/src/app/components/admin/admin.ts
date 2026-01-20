@@ -28,8 +28,8 @@ export class Admin {
     constructor(private router: Router) {
     this.usersService.getUsuarios().subscribe({
     next: (users) => {
-      console.log('USUARIOS =>', this.users);
       this.users = users;
+      console.log('USUARIOS =>', this.users);
       this.usuariosFiltered = users;
       console.log('USUARIOS FILTRADOS =>', this.usuariosFiltered);
       this.usuariosCategory = Array.from(
