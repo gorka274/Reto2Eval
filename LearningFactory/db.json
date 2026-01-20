@@ -6,6 +6,7 @@
       "apellido": "García",
       "correoElectronico": "juan.garcia@email.com",
       "telefono": "+34 612 345 678",
+      "password": "password",
       "rol": "admin"
     },
     {
@@ -14,6 +15,7 @@
       "apellido": "López",
       "correoElectronico": "maria.lopez@email.com",
       "telefono": "+34 623 456 789",
+      "password": "password",
       "rol": "user"
     },
     {
@@ -22,6 +24,7 @@
       "apellido": "Martínez",
       "correoElectronico": "carlos.martinez@email.com",
       "telefono": "+34 634 567 890",
+      "password": "password",
       "rol": "user"
     },
     {
@@ -30,6 +33,7 @@
       "apellido": "Rodríguez",
       "correoElectronico": "ana.rodriguez@email.com",
       "telefono": "+34 645 678 901",
+      "password": "password",
       "rol": "user"
     },
     {
@@ -38,6 +42,7 @@
       "apellido": "Fernández",
       "correoElectronico": "pedro.fernandez@email.com",
       "telefono": "+34 656 789 012",
+      "password": "password",
       "rol": "user"
     },
     {
