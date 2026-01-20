@@ -1,7 +1,13 @@
 export interface Usuario {
   id: number;
   nombre: string;
-  apellido: number;
+  apellido: string;
   correoElectronico: string;
   telefono: string;
+  rol: Rol;
+}
+
+export enum Rol {
+  USER = 'user',
+  ADMIN = 'admin'
 }

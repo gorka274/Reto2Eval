@@ -1,54 +1,54 @@
 
-<body>
-    <div class="container">
-        <div class="form-section">
+<form>
+    <div class="container"> <!--toda la pagina-->
+        <div class="formulario"> <!--el formulario, desde el titulo hasta el boton de comprar-->
             <h1>Comprar MK677</h1>
             <p class="subtitle">Ingresa tus datos para poder registrarte en nuestra página web. </p>
 
-            <div class="form-row">
-                <div class="form-group">
+            <div class="fila"> <!-- Una fila que en este caso tiene 2 inputs dentro-->
+                <div class="rellenar"> <!-- Cada "rellenar" es un input-->
                     <label for="cp">CP</label>
-                    <input type="text" id="cp" placeholder="Ingresa tu código postal">
+                    <input type="text" id="cp" placeholder="Ingresa tu código postal" required>
                 </div>
-                <div class="form-group">
+                <div class="rellenar">
                     <label for="metodo">Método de pago</label>
-                    <input type="text" id="metodo" placeholder="Ingresa tu método de pago">
+                    <input type="text" id="metodo" placeholder="Ingresa tu método de pago" required>
                 </div>
             </div>
 
-            <div class="form-row">
-                <div class="form-group">
+            <div class="fila">
+                <div class="rellenar">
                     <label for="provincia">Provincia</label>
-                    <input type="text" id="provincia" placeholder="Ingresa tu provincia">
+                    <input type="text" id="provincia" placeholder="Ingresa tu provincia" required>
                 </div>
-                <div class="form-group">
+                <div class="rellenar">
                     <label for="cantidad">Cantidad</label>
-                    <input type="number" id="cantidad" placeholder="Ingresa la cantidad que quieras" value="1" min="1">
+                    <input type="number" id="cantidad" placeholder="Ingresa la cantidad que quieras" value="1" min="1" required>
                 </div>
             </div>
 
-            <div class="form-row">
-                <div class="form-group">
+            <div class="fila">
+                <div class="rellenar">
                     <label for="calle">Calle</label>
-                    <input type="text" id="calle" placeholder="Ingresa tu dirección">
+                    <input type="text" id="calle" placeholder="Ingresa tu dirección" required>
                 </div>
             </div>
 
-            <div class="price-section">
-                <span class="price-label">Precio total:</span>
-                <span class="price-value" id="precioTotal">2499€</span>
+            <div class="precioSeccion">
+                <span class="precioLabel">Precio total:</span>
+                <span class="precioTotal" id="precioTotal">2499€</span>
             </div>
 
-            <button class="btn-comprar" onclick="comprar()">Comprar</button>
+            <button class="comprar" onclick="comprar()">Comprar</button>
         </div>
 
-        <div class="info-section">
-            <div class="image-container">
-                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400">
+        <div class="informacion">
+            <div class="imagenCompra">
+                <img src="img/imagenCompra.jpg">
             </div>
-            <div class="text-box">
+            <div class="textoAgradecer">
                 <p>Gracias por considerar comprar nuestro producto</p>
             </div>
         </div>
     </div>
-</body>
+</form>
