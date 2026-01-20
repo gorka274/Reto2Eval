@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; // <-- Esto es clave
 import { Serviciousuario } from '../../services/serviciousuario';
 import { Usuario, Rol } from '../../models/usuarios';
 

@@ -1,7 +1,7 @@
 {
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Juan",
       "apellido": "García",
       "correoElectronico": "juan.garcia@email.com",
@@ -10,7 +10,7 @@
       "rol": "admin"
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "María",
       "apellido": "López",
       "correoElectronico": "maria.lopez@email.com",
@@ -19,7 +19,7 @@
       "rol": "user"
     },
     {
-      "id": 3,
+      "id": "3",
       "nombre": "Carlos",
       "apellido": "Martínez",
       "correoElectronico": "carlos.martinez@email.com",
@@ -28,7 +28,7 @@
       "rol": "user"
     },
     {
-      "id": 4,
+      "id": "4",
       "nombre": "Ana",
       "apellido": "Rodríguez",
       "correoElectronico": "ana.rodriguez@email.com",
@@ -37,7 +37,7 @@
       "rol": "user"
     },
     {
-      "id": 5,
+      "id": "5",
       "nombre": "Pedro",
       "apellido": "Fernández",
       "correoElectronico": "pedro.fernandez@email.com",
@@ -46,7 +46,7 @@
       "rol": "user"
     },
     {
-      "id": 6,
+      "id": "6",
       "nombre": "",
       "apellido": "",
       "correoElectronico": "",
@@ -55,11 +55,20 @@
       "rol": "user"
     },
     {
-      "id": 7,
+      "id": "7",
       "nombre": "Ander",
       "apellido": "Munoz",
       "correoElectronico": "ander123@gmail.com",
       "telefono": "900000000",
+      "password": "password",
+      "rol": "user"
+    },
+    {
+      "id": "71",
+      "nombre": "Lancelottt",
+      "apellido": "Ber",
+      "correoElectronico": "a_munozber@fpzornotza.com",
+      "telefono": "+34900111222",
       "password": "password",
       "rol": "user"
     }
@@ -67,7 +76,8 @@
   "MK677": [
     {
       "stock": 30,
-      "price": 2499.99
+      "price": 2499.99,
+      "id": "18b2"
     }
   ]
 }

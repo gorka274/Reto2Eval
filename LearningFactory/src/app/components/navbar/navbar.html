@@ -1,10 +1,24 @@
 <nav class="navbar">
-    <a href="#"><div class="logo">LF</div></a>
-    <ul class="nav-links">
-        <li><a href="#" routerLink="/home">Inicio</a></li>
-        <li><a href="#" routerLink="/caracteristicas">Maquina</a></li>
-        <li><a href="#" routerLink="/compra">Comprar</a></li>
-        <li><a href="#" routerLink="/login">Iniciar Sesion</a></li>
-        <li><a href="#" routerLink="/admin">Admin</a></li>
-    </ul>
+  <a href="#"><div class="logo">LF</div></a>
+  <ul class="nav-links">
+    <!-- Links visibles para todos -->
+    <li><a routerLink="/home">Inicio</a></li>
+    <li><a routerLink="/caracteristicas">Maquina</a></li>
+    <li><a routerLink="/compra">Comprar</a></li>
+
+    <!-- Solo si NO está logueado -->
+    <li *ngIf="!authService.estaLogueado()">
+      <a routerLink="/login">Iniciar Sesión</a>
+    </li>
+
+    <!-- Solo si es admin -->
+    <li *ngIf="authService.esAdmin()">
+      <a routerLink="/admin">Admin</a>
+    </li>
+
+    <!-- Cerrar sesión visible solo si está logueado -->
+    <li *ngIf="authService.estaLogueado()">
+      <a (click)="authService.logout()" style="cursor:pointer">Cerrar Sesión</a>
+    </li>
+  </ul>
 </nav>
