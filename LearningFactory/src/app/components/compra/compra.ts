@@ -17,7 +17,7 @@ export class Compra {
 
   constructor() {
     this.servicio.getMaquina().subscribe(data => {
-      this.datosMaquina = data; // Actualizamos el valor del signal
+      this.datosMaquina = data.maquina; // Actualizamos el valor del signal
       console.log('Datos de la máquina:', data);
     });
   }
