@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormsModule } from '@angular/forms'; // <-- Esto es clave
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { Serviciousuario } from '../../services/serviciousuario';
 import { Usuario, Rol } from '../../models/usuarios';
 
@@ -25,20 +25,32 @@ export class Registro {
     rol: Rol.USER,
   };
 
-  lastUserId!: number;
-
   alta() {
     this.serviciousuario.getUsuarios().subscribe((users: Usuario[]) => {
+
+      const usuarioEncontrado = users.find(u => u.correoElectronico === this.userX.correoElectronico);
+
+      if (usuarioEncontrado) {
+        alert('Ya existe un usuario con el email: ' + usuarioEncontrado.correoElectronico);
+        return; // Detenemos la ejecución
+      }
+
       if (users.length > 0) {
         const ultimo = users[users.length - 1];
-        this.userX.id = ultimo.id + 1;
+        this.userX.id = Number(ultimo.id) + 1;
       } else {
         this.userX.id = 1;
       }
-      console.log(this.userX);
-      this.serviciousuario.alta(this.userX).subscribe(() => {
-        alert('nuevo usuario aceptado');
-        this.router.navigate(['home']);
+
+      console.log('Enviando usuario:', this.userX);
+      this.serviciousuario.alta(this.userX).subscribe({
+        next: () => {
+          alert('nuevo usuario aceptado');
+          this.router.navigate(['home']);
+        },
+        error: (err) => {
+          console.error('Error en el servidor:', err);
+        }
       });
     });
   }

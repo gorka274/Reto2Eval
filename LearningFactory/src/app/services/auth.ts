@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Usuario, Rol } from '../models/usuarios';
+import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root',
@@ -8,8 +10,7 @@ export class AuthService {
 
   private usuarioLogueado: Usuario | null = null;
 
-  constructor() {
-    // recuperar sesión al recargar
+  constructor(    private router: Router) {
     const user = localStorage.getItem('usuarioLogueado');
     if (user) {
       this.usuarioLogueado = JSON.parse(user);
@@ -24,6 +25,9 @@ export class AuthService {
   logout() {
     this.usuarioLogueado = null;
     localStorage.removeItem('usuarioLogueado');
+    this.router.navigate(['home']);
+
+
   }
 
   getUsuario(): Usuario | null {

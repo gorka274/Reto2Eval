@@ -5,14 +5,28 @@ import { Compra } from './components/compra/compra';
 import { Home } from './components/home/home';
 import { Login } from './components/login/login';
 import { Registro } from './components/registro/registro';
+import { adminGuard, publicGuard } from './services/auth.guard';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path: 'home', component: Home},
-  { path: 'caracteristicas', component: CaracteristicasProducto},
-  { path: 'compra', component: Compra},
-  { path: 'login', component: Login},
-  { path: 'registro', component: Registro},
-  { path: 'admin', component: Admin},
-  { path: '**', redirectTo: '/home' }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: Home },
+  { path: 'caracteristicas', component: CaracteristicasProducto },
+  { path: 'compra', component: Compra },
+
+  //LOGIN
+  {
+    path: 'login',
+    component: Login,
+    canActivate: [publicGuard],
+  },
+
+  { path: 'registro', component: Registro },
+
+  // ADMIN
+  {
+    path: 'admin',
+    component: Admin,
+    canActivate: [adminGuard],
+  },
+  { path: '**', redirectTo: '/home' },
 ];

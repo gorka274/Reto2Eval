@@ -26,7 +26,6 @@ import { CommonModule } from '@angular/common';
 
 export class Navbar {
   constructor(public authService: AuthService) {
-    // Efecto que se ejecuta cada vez que cambia el usuario logueado
     effect(() => {
       const usuario = this.authService.getUsuario();
       if (usuario) {
