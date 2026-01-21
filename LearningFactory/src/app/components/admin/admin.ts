@@ -4,10 +4,11 @@ import { Serviciousuario } from '../../services/serviciousuario';
 import { Router } from '@angular/router';
 import { Maquina } from '../../models/maquina';
 import { Serviciomaquina } from '../../services/serviciomaquina';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-admin',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './admin.html',
   styleUrl: './admin.scss',
 })
@@ -55,6 +56,10 @@ export class Admin {
     // Usamos un Signal para manejar el estado de forma reactiva
     datosMaquina = signal<Maquina | null>(null);
 
+    //Variables para el modal de modificar
+    mostrarModal = signal<boolean>(false);
+    usuarioEditando = signal<Usuario | null>(null);
+
 
     constructor(private router: Router) {
     this.usersService.getUsuarios().subscribe({
@@ -93,5 +98,64 @@ export class Admin {
           }
         });
       }
+    }
+
+    //Abrir modal para modificar usuario
+    abrirModalModificar(usuario: Usuario) {
+      //Copia para no modificar el original hasta guardar
+      this.usuarioEditando.set({...usuario});
+      this.mostrarModal.set(true);
+      console.log('Editando usuario:', usuario);
+    }
+
+    //Cerrar modal
+    cerrarModal() {
+      this.mostrarModal.set(false);
+      this.usuarioEditando.set(null);
+    }
+
+    //Guardar cambios del usuario
+    guardarCambios() {
+      const usuario = this.usuarioEditando();
+
+      if (!usuario) return;
+
+      //Validar si hay campo vacío
+      if (!usuario.nombre || !usuario.apellido || !usuario.correoElectronico) {
+        alert('Por favor, completa todos los campos obligatorios');
+        return;
+      }
+
+      //Validar email
+      const email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.test(usuario.correoElectronico)) {
+        alert('Ingresa un correo electrónico válido');
+        return;
+      }
+
+      this.usersService.updateUsuario(usuario.id, usuario).subscribe({
+        next: (usuarioActualizado) => {
+          console.log('Usuario actualizado:', usuarioActualizado);
+
+          //Actualizar lista de usuarios
+          this.usuariosFiltered.update((currentUsers) =>
+          currentUsers.map((u) => (u.id === usuarioActualizado.id ? usuarioActualizado : u))
+        );
+
+          this.users.update((currentUsers) =>
+          currentUsers.map((u) => (u.id === usuarioActualizado.id ? usuarioActualizado : u))
+        );
+
+        alert('Usuario modificado correctamente');
+        this.cerrarModal();
+        },
+
+        error: (err) => {
+          console.error('Error al actualizar usuario:', err);
+          alert('Hubo un error al actualizar el usuario');
+        },
+      });
+
+
     }
 }
