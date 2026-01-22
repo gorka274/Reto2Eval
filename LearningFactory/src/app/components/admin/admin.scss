@@ -295,3 +295,23 @@
 .btn-guardar:hover {
   background-color: #556323;
 }
+
+
+//Estilos boton guardar
+
+.guardar {
+  background-color: #6b7c2e;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.guardar:hover {
+  background-color: #556323;
+}

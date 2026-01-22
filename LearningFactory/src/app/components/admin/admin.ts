@@ -60,6 +60,9 @@ export class Admin {
     mostrarModal = signal<boolean>(false);
     usuarioEditando = signal<Usuario | null>(null);
 
+    //Variable para el stock
+    stockTemporal = signal<number>(0);
+
 
     constructor(private router: Router) {
     this.usersService.getUsuarios().subscribe({
@@ -77,8 +80,13 @@ export class Admin {
 
     this.maquinaService.getMaquina().subscribe(data => {
       this.datosMaquina.set(data[0]); // Actualizamos el valor del signal
+      this.stockTemporal.set(data[0]?.stock || 0); //Por no tener esto se reiniciaba el stock al recargar la página
       console.log('Datos de la máquina:', data);
     });
+
+
+
+
   }
 
     //Eliminar usuario
@@ -122,7 +130,7 @@ export class Admin {
 
       //Validar si hay campo vacío
       if (!usuario.nombre || !usuario.apellido || !usuario.correoElectronico) {
-        alert('Por favor, completa todos los campos obligatorios');
+        alert('Por favor, completa todos los campos');
         return;
       }
 
@@ -158,4 +166,42 @@ export class Admin {
 
 
     }
+
+    //Aumentar stock
+    aumentarStock() {
+      this.stockTemporal.update((stock) => stock + 1);
+    }
+
+    //Restar stock
+    restarStock() {
+      if (this.stockTemporal() > 0) {
+        this.stockTemporal.update((stock) => stock - 1);
+      }
+    }
+
+    //Guardar stock
+    guardarStock() {
+      const maquina = this.datosMaquina();
+      if (!maquina) return;
+
+      const maquinaActualizada = {
+        stock: this.stockTemporal(),
+        price: maquina.price,
+      };
+
+      this.maquinaService.updateStock('18b2', maquinaActualizada).subscribe({
+        next: (resultado) => {
+          console.log('Stock actualizado:', resultado);
+          this.datosMaquina.set(resultado);
+          alert('Stock guardado correctamente');
+        },
+        error: (err) => {
+          console.error('Error al guardar:', err);
+          alert('Error al guardar el stock');
+        },
+      });
+    }
+
+
+
 }

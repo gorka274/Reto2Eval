@@ -114,9 +114,9 @@
             <div class="control-group">
                 <label class="control-label">Stock:</label>
                 <div class="control-row">
-                    <input type="number" class="control-value" id="stockValue" [value]="datosMaquina()?.stock">
-                    <button class="btn-control">+</button>
-                    <button class="btn-control">-</button>
+                    <input type="number" class="control-value" id="stockValue" [value]="stockTemporal()">
+                    <button class="btn-control" (click)="aumentarStock()">+</button>
+                    <button class="btn-control" (click)="restarStock()">-</button>
                 </div>
             </div>
 
@@ -128,5 +128,7 @@
                     <button class="btn-control">-</button>
                 </div>
             </div>
+
+            <button class="guardar" (click)="guardarStock()">Guardar</button>
         </div>
     </div>
