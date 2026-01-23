@@ -7,18 +7,25 @@
     <li><a routerLink="/compra">Comprar</a></li>
 
     <!-- Solo si NO está logueado -->
-    <li *ngIf="!authService.estaLogueado()">
+    @if ( !authService.estaLogueado()) {
+    <li >
       <a routerLink="/login">Iniciar Sesión</a>
     </li>
+    }
 
     <!-- Solo si es admin -->
-    <li *ngIf="authService.esAdmin()">
+    @if (authService.esAdmin()) {
+    <li>
       <a routerLink="/admin">Admin</a>
     </li>
+    }
 
     <!-- Cerrar sesión visible solo si está logueado -->
-    <li *ngIf="authService.estaLogueado()">
+    @if (authService.estaLogueado()) {
+        <li>
       <a (click)="authService.logout()" style="cursor:pointer">Cerrar Sesión</a>
     </li>
+  }
+
   </ul>
 </nav>

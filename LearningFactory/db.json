@@ -30,7 +30,7 @@
     {
       "id": "4",
       "nombre": "Ana",
-      "apellido": "Rodríguez",
+      "apellido": "Popocatepelc",
       "correoElectronico": "ana.rodriguez@email.com",
       "telefono": "+34 645 678 901",
       "password": "password",
@@ -64,11 +64,11 @@
       "rol": "user"
     },
     {
-      "id": "71",
-      "nombre": "Lancelottt",
-      "apellido": "Ber",
-      "correoElectronico": "a_munozber@fpzornotza.com",
-      "telefono": "+34900111222",
+      "id": 8,
+      "nombre": "Jon",
+      "apellido": "Perez",
+      "correoElectronico": "jperez@gmail.com",
+      "telefono": "900000000",
       "password": "password",
       "rol": "user"
     }

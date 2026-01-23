@@ -30,7 +30,7 @@
                         <td>{{us.telefono}}</td>
                         <th>{{us.rol}}</th>
                         <td>
-                            <button class="btn-modificar">Modificar</button>
+                            <button class="btn-modificar" (click)="abrirModalModificar(us)">Modificar</button>
                             <button class="btn-eliminar" (click)="eliminarUsuario(us.id)">Eliminar</button>
                         </td>
                     </tr>
@@ -39,24 +39,96 @@
             </table>
         </div>
 
+  <!--Modal para modificar usuario-->
+  @if (mostrarModal()) {
+  <div class="modal-overlay" (click)="cerrarModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h2>Modificar Usuario</h2>
+        <button class="btn-cerrar" (click)="cerrarModal()">&times;</button>
+      </div>
+
+      @if (usuarioEditando(); as usuario) {
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            id="nombre"
+            [(ngModel)]="usuario.nombre"
+            placeholder="Nombre"
+            required/>
+        </div>
+
+        <div class="form-group">
+          <label for="apellido">Apellido</label>
+          <input
+            type="text"
+            id="apellido"
+            [(ngModel)]="usuario.apellido"
+            placeholder="Apellido"
+            required/>
+        </div>
+
+        <div class="form-group">
+          <label for="correo">Correo electrónico</label>
+          <input
+            type="email"
+            id="correo"
+            [(ngModel)]="usuario.correoElectronico"
+            placeholder="correo@ejemplo.com"
+            required/>
+        </div>
+
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input
+            type="tel"
+            id="telefono"
+            [(ngModel)]="usuario.telefono"
+            placeholder="+34 600 000 000"/>
+        </div>
+
+        <div class="form-group">
+          <label for="rol">Rol</label>
+          <select id="rol" [(ngModel)]="usuario.rol" required>
+            <option value="user">Usuario</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-cancelar" (click)="cerrarModal()">Cancelar</button>
+        <button class="btn-guardar" (click)="guardarCambios()">
+          Guardar cambios
+        </button>
+      </div>
+      }
+    </div>
+  </div>
+  }
+
         <!-- Controles de Stock y Precio -->
         <div class="stock-container">
             <div class="control-group">
                 <label class="control-label">Stock:</label>
                 <div class="control-row">
-                    <input type="number" class="control-value" id="stockValue" [value]="datosMaquina()?.stock">
-                    <button class="btn-control">+</button>
-                    <button class="btn-control">-</button>
+                    <input type="number" class="control-value" id="stockValue" [value]="stockTemporal()">
+                    <button class="btn-control" (click)="aumentarStock()">+</button>
+                    <button class="btn-control" (click)="restarStock()">-</button>
                 </div>
             </div>
 
             <div class="control-group">
                 <label class="control-label">Precio:</label>
                 <div class="control-row">
-                    <input type="number" class="control-value" id="priceValue" [value]="datosMaquina()?.price" step="0.01">
-                    <button class="btn-control">+</button>
-                    <button class="btn-control">-</button>
+                    <input type="number" class="control-value" id="priceValue" [value]="precioTemporal()" step="0.01">
+                    <button class="btn-control" (click)="aumentarPrecio()">+</button>
+                    <button class="btn-control" (click)="restarPrecio()">-</button>
                 </div>
             </div>
+
+            <button class="guardar" (click)="guardarStock()">Guardar</button>
         </div>
     </div>

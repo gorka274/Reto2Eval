@@ -15,4 +15,10 @@ export class Serviciomaquina {
 
       maquina: Maquina = {stock: 0, price: 0};
       constructor(private http: HttpClient) {}
+
+
+      //Actualizar Stock maquina
+      updateStock(id: string, maquina: Maquina): Observable<Maquina> {
+        return this.http.put<Maquina>(`${this.url}/${id}`, maquina);
+      }
 }
