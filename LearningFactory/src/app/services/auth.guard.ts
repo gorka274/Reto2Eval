@@ -11,7 +11,20 @@ export const adminGuard = () => {
     return true;
   } else {
     alert('Acceso denegado: Se requieren permisos de administrador.');
-    return router.parseUrl('/home'); 
+    return router.parseUrl('/home');
+  }
+};
+
+// GUARDIA 2: Para proteger la zona de /compra de usuarios que no estan loggeados
+export const buyGuard = () => {
+  const authService = inject(AuthService);
+  const router = inject(Router);
+
+  if (authService.estaLogueado()) {
+    return true;
+  } else {
+    alert('Acceso denegado: Se requiere estar loggeado');
+    return router.parseUrl('/login');
   }
 };
 
@@ -29,5 +42,5 @@ export const publicGuard = () => {
     }
   }
 
-  return true; // No está logueado, puede ver el login libremente
+  return true;
 };
