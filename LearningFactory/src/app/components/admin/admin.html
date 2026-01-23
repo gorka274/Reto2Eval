@@ -123,9 +123,9 @@
             <div class="control-group">
                 <label class="control-label">Precio:</label>
                 <div class="control-row">
-                    <input type="number" class="control-value" id="priceValue" [value]="datosMaquina()?.price" step="0.01">
-                    <button class="btn-control">+</button>
-                    <button class="btn-control">-</button>
+                    <input type="number" class="control-value" id="priceValue" [value]="precioTemporal()" step="0.01">
+                    <button class="btn-control" (click)="aumentarPrecio()">+</button>
+                    <button class="btn-control" (click)="restarPrecio()">-</button>
                 </div>
             </div>
 

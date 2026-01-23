@@ -63,6 +63,9 @@ export class Admin {
     //Variable para el stock
     stockTemporal = signal<number>(0);
 
+    //Variable para el precio
+    precioTemporal = signal<number>(0);
+
 
     constructor(private router: Router) {
     this.usersService.getUsuarios().subscribe({
@@ -81,6 +84,7 @@ export class Admin {
     this.maquinaService.getMaquina().subscribe(data => {
       this.datosMaquina.set(data[0]); // Actualizamos el valor del signal
       this.stockTemporal.set(data[0]?.stock || 0); //Por no tener esto se reiniciaba el stock al recargar la página
+      this.precioTemporal.set(data[0]?.price || 0); //Para el valor Price
       console.log('Datos de la máquina:', data);
     });
 
@@ -179,6 +183,18 @@ export class Admin {
       }
     }
 
+    //Aumentar precio
+    aumentarPrecio() {
+      this.precioTemporal.update((precio) => precio + 1);
+    }
+
+    //Restar precio
+    restarPrecio() {
+      if (this.precioTemporal() > 0) {
+      this.precioTemporal.update((precio) => precio - 1);
+      }
+    }
+
     //Guardar stock
     guardarStock() {
       const maquina = this.datosMaquina();
@@ -186,14 +202,16 @@ export class Admin {
 
       const maquinaActualizada = {
         stock: this.stockTemporal(),
-        price: maquina.price,
+        price: this.precioTemporal(),
       };
 
       this.maquinaService.updateStock('18b2', maquinaActualizada).subscribe({
         next: (resultado) => {
           console.log('Stock actualizado:', resultado);
           this.datosMaquina.set(resultado);
-          alert('Stock guardado correctamente');
+          this.stockTemporal.set(resultado.stock); //Valor de stock en la consola
+          this.precioTemporal.set(resultado.price); //Valor de price en la consola
+          alert('Stock y Precio guardados correctamente');
         },
         error: (err) => {
           console.error('Error al guardar:', err);
