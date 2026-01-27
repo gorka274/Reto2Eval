@@ -1,12 +1,11 @@
-
 <form>
-    <div class="container"> <!--toda la pagina-->
-        <div class="formulario"> <!--el formulario, desde el titulo hasta el boton de comprar-->
+    <div class="container">
+        <div class="formulario">
             <h1>Comprar MK677</h1>
-            <p class="subtitle">Ingresa tus datos para poder registrarte en nuestra página web. </p>
+            <p class="subtitle">Ingresa tus datos para completar tu compra. </p>
 
-            <div class="fila"> <!-- Una fila que en este caso tiene 2 inputs dentro-->
-                <div class="rellenar"> <!-- Cada "rellenar" es un input-->
+            <div class="fila">
+                <div class="rellenar">
                     <label for="cp">CP</label>
                     <input type="text" id="cp" placeholder="Ingresa tu código postal" required>
                 </div>
@@ -23,7 +22,8 @@
                 </div>
                 <div class="rellenar">
                     <label for="cantidad">Cantidad</label>
-                    <input type="number" id="cantidad" placeholder="Ingresa la cantidad que quieras" value="1" min="1" required>
+                    <input type="number" id="cantidad" [(ngModel)]="cantidad" name="cantidad" placeholder="Ingresa la cantidad"
+                              min="1" [max]="datosMaquina()?.stock || 1" required>
                 </div>
             </div>
 
@@ -36,10 +36,10 @@
 
             <div class="precioSeccion">
                 <span class="precioLabel">Precio total:</span>
-                <span class="precioTotal" id="precioTotal"> {{ datosMaquina()?.price }} €</span>
+                <span class="precioTotal" id="precioTotal">{{ calcularPrecioTotal() }} €</span>
             </div>
 
-            <button class="comprar" onclick="comprar()">Comprar</button>
+            <button class="comprar" (click)="realizarCompra()" type="submit">Comprar</button>
         </div>
 
         <div class="informacion">
