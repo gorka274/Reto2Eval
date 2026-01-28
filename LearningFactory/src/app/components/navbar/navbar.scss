@@ -1,33 +1,72 @@
-// SCSS Variables
-$primary-color: #3498db;
-$secondary-color: #2ecc71;
-$spacing-small: 8px;
-$spacing-medium: 16px;
-$spacing-large: 32px;
+/*Quitamos los margenes que puedan haber*/
+* {
+    margin: 0;
+    padding: 0;
+}
 
-// Existing styles
 .navbar {
-  background-color: $primary-color;
-  padding: $spacing-medium;
+    display: flex;
+    justify-content: space-between; /* Alinea elementos a los extremos opuestos */
+    align-items: center; /* Centra verticalmente los elementos */
+    background-color: #ffffff;
+    padding: 10px 50px;
+    box-shadow: 0 2px 4px gray;
+    font-family: sans-serif;
+    margin: -8px;
 }
 
-.navbar a {
-  color: $secondary-color;
-  margin-right: $spacing-small;
+nav a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
 }
 
-/* ... rest of the existing styles ... */
+.logo {
+    color: #556b2f; /* El color verde oscuro de la imagen */
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none; /* Elimina los puntos de la lista */
+    display: flex; /* Muestra los elementos de la lista en línea horizontal */
+}
+
+.nav-links li a {
+    color: #556b2f;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block; /* Hace que el área clicable sea todo el padding */
+}
+
+.nav-links li a:hover {
+  color: #76af0b;
+}
 
 /* Media queries para móviles */
 @media (max-width: 768px) {
-  .navbar {
-    padding: $spacing-small;
-  }
+    .navbar {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
 
-  .navbar a {
-    display: block;
-    margin-right: 0;
-    margin-bottom: $spacing-small;
-    padding: $spacing-small;
-  }
+    .logo {
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        padding: 12px 10px;
+        width: 100%;
+    }
 }
