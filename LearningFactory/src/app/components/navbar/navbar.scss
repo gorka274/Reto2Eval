@@ -1,43 +1,19 @@
-/*Quitamos los margenes que puedan haber*/
-* {
-    margin: 0;
-    padding: 0;
-}
+// SCSS Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$spacing-small: 8px;
+$spacing-medium: 16px;
+$spacing-large: 32px;
 
+// Existing styles
 .navbar {
-    display: flex;
-    justify-content: space-between; /* Alinea elementos a los extremos opuestos */
-    align-items: center; /* Centra verticalmente los elementos */
-    background-color: #ffffff;
-    padding: 10px 50px;
-    box-shadow: 0 2px 4px gray;
-    font-family: sans-serif;
-    margin: -8px;
+  background-color: $primary-color;
+  padding: $spacing-medium;
 }
 
-nav a {
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
+.navbar a {
+  color: $secondary-color;
+  margin-right: $spacing-small;
 }
 
-.logo {
-    color: #556b2f; /* El color verde oscuro de la imagen */
-    font-weight: bold;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.nav-links {
-    list-style: none; /* Elimina los puntos de la lista */
-    display: flex; /* Muestra los elementos de la lista en línea horizontal */
-}
-
-.nav-links li a {
-    color: #556b2f;
-    text-decoration: none;
-    padding: 10px 20px;
-    display: block; /* Hace que el área clicable sea todo el padding */
-}
-
-.nav-links li a:hover {
-  color: #76af0b;
-}
+/* ... rest of the existing styles ... */
