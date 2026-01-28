@@ -1,19 +1,8 @@
-// import { Component } from '@angular/core';
-// import { RouterLink } from "@angular/router";
-
-// @Component({
-//   selector: 'app-navbar',
-//   imports: [RouterLink],
-//   templateUrl: './navbar.html',
-//   styleUrl: './navbar.scss',
-// })
-// export class Navbar {
-
-// }
 import { Component, effect } from '@angular/core';
 import { AuthService } from '../../services/auth';
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink, NavigationEnd } from "@angular/router";
 import { CommonModule } from '@angular/common';
+import { filter } from 'rxjs/operators';
 
 
  @Component({
@@ -27,7 +16,7 @@ import { CommonModule } from '@angular/common';
 export class Navbar {
   menuAbierto = false;
 
-  constructor(public authService: AuthService) {
+  constructor(public authService: AuthService, private router: Router) {
     effect(() => {
       const usuario = this.authService.getUsuario();
       if (usuario) {
@@ -35,6 +24,13 @@ export class Navbar {
       } else {
         console.log('Nadie está logueado');
       }
+    });
+
+    // Cerrar menú automáticamente cuando se navega
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.menuAbierto = false;
     });
   }
 
