@@ -322,7 +322,7 @@
     padding: 20px 10px;
   }
 
-  h1 {
+  .main-content h1 {
     font-size: 20px;
     margin-bottom: 20px;
   }
@@ -338,11 +338,12 @@
     gap: 10px;
   }
 
-  table {
+  .table-container table {
     font-size: 12px;
   }
 
-  th, td {
+  .table-container th,
+  .table-container td {
     padding: 8px 4px;
     font-size: 12px;
   }
