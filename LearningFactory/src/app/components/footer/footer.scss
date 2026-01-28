@@ -46,3 +46,33 @@ img {
 footer {
   background-color: $colorFooter;
 }
+
+/* Media queries para móviles */
+@media (max-width: 768px) {
+  div {
+    height: auto;
+    min-height: 200px;
+  }
+
+  h1, h2 {
+    margin-left: 20px;
+    font-size: 20px;
+  }
+
+  h3 {
+    margin-top: 50px;
+    font-size: 18px;
+  }
+
+  hr {
+    margin-left: 20px;
+    width: calc(100% - 40px);
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    margin-top: -30px;
+  }
+}

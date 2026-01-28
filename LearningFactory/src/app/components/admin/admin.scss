@@ -315,3 +315,108 @@
 .guardar:hover {
   background-color: #556323;
 }
+
+/* Media queries para móviles */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px 10px;
+  }
+
+  .main-content h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .table-container {
+    padding: 10px;
+    overflow-x: auto;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .table-container table {
+    font-size: 12px;
+  }
+
+  .table-container th,
+  .table-container td {
+    padding: 8px 4px;
+    font-size: 12px;
+  }
+
+  .btn-modificar, .btn-eliminar {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .stock-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .control-label {
+    font-size: 20px;
+  }
+
+  .control-row {
+    gap: 10px;
+  }
+
+  .control-value {
+    min-width: 60px;
+    font-size: 16px;
+  }
+
+  .btn-control {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  .modal-content {
+    width: 95%;
+    max-width: 100%;
+  }
+
+  .modal-header h2 {
+    font-size: 18px;
+  }
+
+  .modal-body {
+    padding: 15px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .modal-footer {
+    padding: 15px;
+    flex-direction: column;
+  }
+
+  .btn-cancelar,
+  .btn-guardar {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .guardar {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

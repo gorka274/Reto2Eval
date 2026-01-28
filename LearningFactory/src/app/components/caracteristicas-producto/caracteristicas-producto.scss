@@ -98,3 +98,79 @@ $border-radius: 12px;
     }
   }
 }
+
+/* Media queries para móviles */
+@media (max-width: 768px) {
+  .producto {
+    padding: 2rem 1rem;
+
+    &__hero {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    &__titulo {
+      font-size: 1.8rem;
+    }
+
+    &__tagline {
+      font-size: 0.9rem;
+    }
+
+    &__precio {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    &__descripcion {
+      font-size: 0.9rem;
+      max-width: 100%;
+    }
+  }
+
+  .btn-primary {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .caracteristicas {
+    padding: 2rem 1rem;
+
+    .caracteristica {
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+
+      &__index {
+        font-size: 1.2rem;
+        min-width: auto;
+      }
+    }
+  }
+
+  .especificaciones {
+    padding: 2rem 1rem;
+
+    .tabla {
+      font-size: 0.9rem;
+
+      th, td {
+        padding: 0.75rem 0.5rem;
+      }
+
+      th {
+        font-size: 0.85rem;
+      }
+
+      td {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
