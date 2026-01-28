@@ -25,6 +25,8 @@ import { CommonModule } from '@angular/common';
  })
 
 export class Navbar {
+  menuAbierto = false;
+
   constructor(public authService: AuthService) {
     effect(() => {
       const usuario = this.authService.getUsuario();
@@ -34,5 +36,9 @@ export class Navbar {
         console.log('Nadie está logueado');
       }
     });
+  }
+
+  toggleMenu() {
+    this.menuAbierto = !this.menuAbierto;
   }
 }

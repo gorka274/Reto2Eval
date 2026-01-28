@@ -1,6 +1,15 @@
 <nav class="navbar">
   <a href="#"><div class="logo">LF</div></a>
-  <ul class="nav-links">
+  
+  <!-- Botón hamburguesa (solo visible en móvil) -->
+  <button class="menu-toggle" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
+  <!-- Menú de navegación -->
+  <ul class="nav-links" [class.active]="menuAbierto">
     <!-- Links visibles para todos -->
     <li><a routerLink="/home">Inicio</a></li>
     <li><a routerLink="/caracteristicas">Maquina</a></li>
