@@ -63,13 +63,14 @@
   outline: none;
 }
 
-/* Grid de contenido - ARREGLADO */
+
 .carousel-container + .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  width: 100%;
-  max-width: 100%;
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto;
   box-sizing: border-box;
   padding: 20px;
 }
@@ -79,17 +80,31 @@
   padding: 20px;
   border-radius: 10px;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .bloque.objetivos {
-  margin: 20px;
+  margin: 0;
   min-height: 400px;
 }
 
+.bloque.objetivos p {
+  font-size: 16px;
+}
+
+.bloque.valores {
+  width: 100%;
+}
+
+.bloque.valores p {
+  font-size: 16px;
+}
+
 .bloque.video {
-  min-height: 420px; /* Igualado a objetivos */
+  min-height: 420px;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .bloque.lista-objetivos {
@@ -99,6 +114,8 @@
   gap: 15px;
   min-height: 450px;
   justify-content: space-between;
+  padding-left: 20px;
+  width: 100%;
 }
 
 .lista-objetivos .item {
@@ -127,7 +144,7 @@
   color: #333;
 }
 
-.video img {
+.video {
   width: 100%;
-  border-radius: 10px;
+  height: 100%;
 }
