@@ -81,3 +81,45 @@ label {
 }
 
 
+/* Media queries para móviles */
+@media (max-width: 768px) {
+  .contenedor {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+
+  .login {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .lateral {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .titulo {
+    font-size: 24px;
+  }
+
+  .subtitulo {
+    font-size: 14px;
+  }
+
+  form {
+    margin-left: 0;
+    padding: 0 20px;
+  }
+
+  #email, #password {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .boton {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 30px;
+    padding: 15px;
+  }
+}
