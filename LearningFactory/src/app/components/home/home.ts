@@ -1,4 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, input, OnInit } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser'; //SEO
+
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,30 @@ import { Component, input } from '@angular/core';
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {
+export class Home implements OnInit {
+
+  constructor(
+    private titleService: Title, 
+    private metaService: Meta
+  ) {}
+
+   ngOnInit(): void {
+    //Titulo de la página
+    this.titleService.setTitle('Reciclaje de Plásticos y Economía Circular | LearningFactory');
+
+    //Etiquetas
+    this.metaService.updateTag({ 
+      name: 'description', 
+      content: 'Transformamos residuos plásticos en recursos valiosos mediante tecnología innovadora para combatir la acumulación de desechos y proteger la capa de ozono.' 
+    });
+
+    this.metaService.updateTag({ name: 'keywords', content: 'reciclaje plástico, economía circular, medio ambiente, gestión de residuos, sostenibilidad' });
+
+    this.metaService.updateTag({ property: 'og:title', content: 'Líderes en Reciclaje y Transformación de Plástico' });
+    this.metaService.updateTag({ property: 'og:description', content: 'Soluciones tecnológicas para el tratamiento de residuos y la protección del planeta.' });
+  }
+
+  
   slides = [
     {
       title: 'LEARNING FACTORY',
