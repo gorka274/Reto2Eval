@@ -1,29 +1,36 @@
 <nav class="navbar">
   <a href="#"><div class="logo">LF</div></a>
-  <ul class="nav-links">
+
+  <div class="hamburger" (click)="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  
+  <ul class="nav-links" [class.active]="menuOpen">
     <!-- Links visibles para todos -->
-    <li><a routerLink="/home">Inicio</a></li>
-    <li><a routerLink="/caracteristicas">Maquina</a></li>
-    <li><a routerLink="/compra">Comprar</a></li>
+    <li><a routerLink="/home" (click)="toggleMenu()">Inicio</a></li>
+    <li><a routerLink="/caracteristicas" (click)="toggleMenu()">Maquina</a></li>
+    <li><a routerLink="/compra" (click)="toggleMenu()">Comprar</a></li>
 
     <!-- Solo si NO está logueado -->
     @if ( !authService.estaLogueado()) {
     <li >
-      <a routerLink="/login">Iniciar Sesión</a>
+      <a routerLink="/login" (click)="toggleMenu()">Iniciar Sesión</a>
     </li>
     }
 
     <!-- Solo si es admin -->
     @if (authService.esAdmin()) {
     <li>
-      <a routerLink="/admin">Admin</a>
+      <a routerLink="/admin" (click)="toggleMenu()">Admin</a>
     </li>
     }
 
     <!-- Cerrar sesión visible solo si está logueado -->
     @if (authService.estaLogueado()) {
         <li>
-      <a (click)="authService.logout()" style="cursor:pointer">Cerrar Sesión</a>
+      <a (click)="authService.logout(); toggleMenu()" style="cursor:pointer">Cerrar Sesión</a>
     </li>
   }
 
