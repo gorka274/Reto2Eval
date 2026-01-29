@@ -1,4 +1,9 @@
-/*Quitamos los margenes que puedan haber*/
+$colorBlanco: #ffffff;
+$colorVerdeOscuro: #556b2f;
+$colorVerdeClaro: #76af0b;
+$colorGris: gray;
+$colorNegro: rgba(0, 0, 0, 0.1);
+
 * {
     margin: 0;
     padding: 0;
@@ -6,38 +11,92 @@
 
 .navbar {
     display: flex;
-    justify-content: space-between; /* Alinea elementos a los extremos opuestos */
-    align-items: center; /* Centra verticalmente los elementos */
-    background-color: #ffffff;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $colorBlanco;
     padding: 10px 50px;
-    box-shadow: 0 2px 4px gray;
+    box-shadow: 0 2px 4px $colorGris;
     font-family: sans-serif;
     margin: -8px;
+    position: relative;
+    z-index: 1000;
 }
 
 nav a {
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    text-decoration: none;
 }
 
 .logo {
-    color: #556b2f; /* El color verde oscuro de la imagen */
+    color: $colorVerdeOscuro;
     font-weight: bold;
     font-size: 24px;
     cursor: pointer;
 }
 
 .nav-links {
-    list-style: none; /* Elimina los puntos de la lista */
-    display: flex; /* Muestra los elementos de la lista en línea horizontal */
+    list-style: none;
+    display: flex;
 }
 
 .nav-links li a {
-    color: #556b2f;
+    color: $colorVerdeOscuro;
     text-decoration: none;
     padding: 10px 20px;
-    display: block; /* Hace que el área clicable sea todo el padding */
+    display: block;
 }
 
 .nav-links li a:hover {
-  color: #76af0b;
+    color: $colorVerdeClaro;
+}
+
+/* Estilo del botón hamburguesa */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: $colorVerdeOscuro;
+    border-radius: 5px;
+}
+
+/*Resolucion movil*/
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: $colorBlanco;
+        box-shadow: 0 4px 6px $colorNegro;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .nav-links li a {
+        padding: 15px;
+    }
 }

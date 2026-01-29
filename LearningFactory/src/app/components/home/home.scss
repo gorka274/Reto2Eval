@@ -1,7 +1,16 @@
+// Variables de color
+$verde: #6b7f00;
+$verde-oscuro: #485400;
+$blanco: white;
+$negro: #333;
+$color-hover: #ccc;
+$color-lista-objetivos: #f5f5eb;
+$color-lista-objetivos-item: #e8e8e8;
+
 .carousel {
   position: relative;
-  background: #6b7f00;
-  color: white;
+  background: $verde;
+  color: $blanco;
   padding: 60px;
   overflow: hidden;
 }
@@ -41,14 +50,14 @@
   transform: translateY(-50%);
   background: transparent;
   border: none;
-  color: white;
+  color: $blanco;
   font-size: 40px;
   cursor: pointer;
 }
 
 .nav:hover {
-  color: #ccc;
-  background-color: #485400;
+  color: $color-hover;
+  background-color: $verde-oscuro;
 }
 
 .nav.left {
@@ -63,7 +72,6 @@
   outline: none;
 }
 
-
 .carousel-container + .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -76,7 +84,7 @@
 }
 
 .bloque {
-  background-color: #f5f5eb;
+  background-color: $color-lista-objetivos;
   padding: 20px;
   border-radius: 10px;
   box-sizing: border-box;
@@ -109,7 +117,7 @@
 }
 
 .bloque.lista-objetivos {
-  background-color: white;
+  background-color: $blanco;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -122,7 +130,7 @@
 .lista-objetivos .item {
   display: flex;
   align-items: center;
-  background-color: #e8e8e8;
+  background-color: $color-lista-objetivos-item;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -142,10 +150,61 @@
 .lista-objetivos p {
   margin: 0;
   font-size: 16px;
-  color: #333;
+  color: $negro;
 }
 
 .video {
   width: 100%;
   height: 100%;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .slide {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .carousel-container + .content {
+    grid-template-columns: 1fr; /* Pasa a una sola columna */
+  }
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  .carousel {
+    padding: 40px 20px;
+  }
+
+  .content h1 {
+    font-size: 32px; /* Reducimos tamaño de los titulos */
+  }
+
+  .content p {
+    font-size: 18px; /* Reducimos un poco el tamaño del texto general */
+  }
+
+  .lista-objetivos .item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .lista-objetivos img {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+  }
+
+  .bloque.video {
+    min-height: auto;
+    aspect-ratio: 16 / 9;
+  }
 }

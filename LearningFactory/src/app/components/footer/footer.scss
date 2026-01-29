@@ -12,6 +12,8 @@ $normal: normal;
 
 footer {
   margin: -8px;
+  background-color: $colorFooter;
+
 }
 
 div {
@@ -43,6 +45,36 @@ img {
 }
 
 
-footer {
-  background-color: $colorFooter;
+/*Resolucion movil*/
+
+@media (max-width: 768px) {
+  h1, h2 {
+    margin-left: 0;
+    text-align: $centro;
+  }
+
+  hr {
+    margin: 20px auto;
+    width: 80%;
+  }
+
+  footer div {
+    text-align: $centro;
+  }
+
+  img {
+    float: none;
+    display: inline-block; //Para que las imagenes esten en línea
+    margin: 10px 5px;
+    margin-top: 10px;
+  }
+
+  h3 {
+    margin-top: 30px;
+  }
+
+  div {
+    height: auto;
+    padding-bottom: 20px;
+  }
 }

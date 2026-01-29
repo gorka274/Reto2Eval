@@ -25,6 +25,11 @@ import { CommonModule } from '@angular/common';
  })
 
 export class Navbar {
+
+
+  //Variable para el menu abierto o cerrado
+  menuOpen: boolean = false;
+
   constructor(public authService: AuthService) {
     effect(() => {
       const usuario = this.authService.getUsuario();
@@ -35,4 +40,10 @@ export class Navbar {
       }
     });
   }
+
+  // Funcion para abrir y cerrar el menú
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
 }

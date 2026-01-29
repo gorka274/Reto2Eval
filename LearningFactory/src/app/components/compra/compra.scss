@@ -137,3 +137,33 @@ input {
   font-size: 14px;
   text-align: center;
 }
+
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .formulario {
+    padding: 20px; /* Reducimos padding interno */
+  }
+
+  .fila, .informacion {
+    grid-template-columns: 1fr; /* Una sola columna */
+    gap: 15px; /* Espacio más compacto */
+    margin-bottom: 15px;
+  }
+
+  .comprar {
+    width: 100%; /* El botón ocupa todo el ancho */
+  }
+
+  .precioSeccion {
+    margin: 25px 0;
+  }
+
+  .textoAgradecer {
+    padding: 20px;
+  }
+}
