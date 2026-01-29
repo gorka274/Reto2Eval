@@ -2,15 +2,15 @@
 <section class="producto">
   <div class="producto__hero">
     <div class="producto__imagen">
-      <img src="img/Makina.jpg" alt="Máquina MK677" />
+      <img src="img/Makina.jpg" alt="Máquina MK677 para triturado y reciclaje de plástico" />
     </div>
 
     <div class="producto__info">
       <h1 class="producto__titulo">MK677</h1>
       <p class="producto__tagline">Convertir tu plástico en objetos reutilizables</p>
 
-      <div class="producto__precio">{{ datosMaquina()?.price }} €</div>
-      <button class="btn-primary" routerLink="/compra">Comprar</button>
+      <div class="producto__precio" aria-label="Precio del producto">{{ datosMaquina()?.price }} €</div>
+      <button class="btn-primary" routerLink="/compra" aria-label="Comprar máquina MK677">Comprar</button>
 
       <div class="producto__descripcion">
         Nuestra máquina ofrece una segunda vida al plástico que ya no necesitas, ayudando a reutilizarlo y darle un mejor uso. Su diseño hace que sea fácil de transportar, sea duradera y haga su trabajo de forma rápida y eficiente.
@@ -51,16 +51,16 @@
   <h2 class="section-title">Especificaciones</h2>
 
   <table class="tabla">
-    <tr><th>Potencia</th><td>1500W con capacidad para trabajos de alta demanda</td></tr>
-    <tr><th>Dimensiones</th><td>120cm x 60cm x 80cm (largo x ancho x alto)</td></tr>
-    <tr><th>Peso</th><td>85 kg, estructura de acero reforzado</td></tr>
-    <tr><th>Velocidad de operación</th><td>Ajustable entre 100–1200 RPM</td></tr>
-    <tr><th>Capacidad de carga</th><td>Hasta 50 kg de material procesado por ciclo</td></tr>
-    <tr><th>Sistema de refrigeración</th><td>Integrado con ventilación activa</td></tr>
-    <tr><th>Interfaz de usuario</th><td>Pantalla táctil de 10" con software personalizable</td></tr>
-    <tr><th>Conectividad</th><td>Puertos USB, Ethernet y conectividad Wi-Fi para IoT</td></tr>
-    <tr><th>Consumo energetico</th><td>Integrado con ventilación activa</td></tr>
-    <tr><th>Nivel de ruido</th><td>65 dB en operación normal</td></tr>
+    <tr><th scope="row">Potencia</th><td>1500W con capacidad para trabajos de alta demanda</td></tr>
+    <tr><th scope="row">Dimensiones</th><td>120cm x 60cm x 80cm (largo x ancho x alto)</td></tr>
+    <tr><th scope="row">Peso</th><td>85 kg, estructura de acero reforzado</td></tr>
+    <tr><th scope="row">Velocidad de operación</th><td>Ajustable entre 100–1200 RPM</td></tr>
+    <tr><th scope="row">Capacidad de carga</th><td>Hasta 50 kg de material procesado por ciclo</td></tr>
+    <tr><th scope="row">Sistema de refrigeración</th><td>Integrado con ventilación activa</td></tr>
+    <tr><th scope="row">Interfaz de usuario</th><td>Pantalla táctil de 10" con software personalizable</td></tr>
+    <tr><th scope="row">Conectividad</th><td>Puertos USB, Ethernet y conectividad Wi-Fi para IoT</td></tr>
+    <tr><th scope="row">Consumo energetico</th><td>Integrado con ventilación activa</td></tr>
+    <tr><th scope="row">Nivel de ruido</th><td>65 dB en operación normal</td></tr>
   </table>
 </section>
 
