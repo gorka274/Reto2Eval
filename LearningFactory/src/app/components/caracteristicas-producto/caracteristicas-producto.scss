@@ -10,6 +10,8 @@ $negrita: bold;
 .producto {
   background: $secondary-color;
   padding: 4rem 6rem;
+  margin-left: -8px;
+  margin-right: -8px;
 
   &__hero {
     display: grid;
@@ -80,6 +82,8 @@ $negrita: bold;
 .especificaciones {
   padding: 4rem 6rem;
   background: $secondary-color;
+  margin-left: -8px;
+  margin-right: -8px;
 
   .tabla {
     width: 100%;
